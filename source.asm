@@ -15,7 +15,7 @@
 
 SET 0 12
 SET 1 11
-SET 2 3
+SET 2 13
 SET 3 5
 SET 4 6
 SET 5 7
@@ -26,11 +26,11 @@ SET 9 1         # will be used in jump
 SET 10 0        # used in heapify for largest
 SET 11 0        # used in heapify for smallest
 
-HEAP 0 8        # heapify all elements ( creating max heap)
+HEAP            # heapify all elements (creating max heap)
 
-SWAP 0 (8)      # swaps value of register 0 with the register pointed by register 8
-DEC 8           # decreases value of register 8 by 1  
-JMP 10          # jumping to heap command
+SWAP            # swaps value of register 0 with the register pointed by register 8
+DEC             # decreases value of register 8 by 1  
+JMP 13          # jumping to heap command
 PRINT           # print register 0 to 5
 
 EXIT            # stoping the machine
