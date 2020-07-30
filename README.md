@@ -9,7 +9,7 @@ Array to be sorted :-    {12, 11, 13, 5, 6, 7}
 Total Number of Elements :-    6
 
 
-Source Code can be found in 'assembly code' folder for Assembly code and 'c' folder for C++ code and 'machine code' folder for machine code.
+Source Code can be found in:- 'assembly code' folder for Assembly code and 'c' folder for C++ code and 'machine code' folder for machine code.
 
 Functions are created as they can be executed in 8085 to maintain the simplicity and machine accepts the same. The source file in the root directory is written for executing.
 
