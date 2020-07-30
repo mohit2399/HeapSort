@@ -36,7 +36,7 @@ void f_print(RAM *r)
 
 void f_jmp(RAM *r)
 {
-	if (regs[9] == 1)
+	if (r->regs[9] == 1)
 	{
 		u8 des = r->ins[++r->ip];
 		r->ip -= des;
@@ -46,23 +46,23 @@ void f_jmp(RAM *r)
 
 void f_dec(RAM *r)
 {
-	regs[8] -= 1;
+	r->regs[8] -= 1;
 }
 
 void f_inc(RAM *r)
 {
-	regs[8] += 1;
+	r->regs[8] += 1;
 }
 
 void f_swap(RAM *r)
 {
-	regs[7] = regs[0];
-	regs[0] = regs[r->regs[8]];
-	regs[r->regs[8]] = regs[7];
+	r->regs[7] = r->regs[0];
+	r->regs[0] = r->regs[r->regs[8]];
+	r->regs[r->regs[8]] = r->regs[7];
 
-	if (regs[8] < 1) //condition created for not jumping called with swap
+	if (r->regs[8] < 1) //condition created for not jumping called with swap
 	{
-		regs[9] = 0;
+		r->regs[9] = 0;
 	}
 	++r->ip;
 }
@@ -82,7 +82,10 @@ void f_heap(RAM *r)
 			int j = i;
 			while (arr[j] > arr[(j - 1) / 2])
 			{
-				swap(arr[j], arr[(j - 1) / 2]);
+			    int temp=0;
+			    temp=arr[j];
+			    arr[j]=arr[(j - 1) / 2];
+				arr[(j - 1) / 2]=arr[j];
 				j = (j - 1) / 2;
 			}
 		}
